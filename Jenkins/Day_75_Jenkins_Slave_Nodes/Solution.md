@@ -114,10 +114,10 @@ sudo yum install -y java-17-openjdk
 ```
 
 ### Add Global Credentials
-![Add Global Credentials](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day75-Jenkins-Slave-Node/images/image-1.png)
+![Add Global Credentials](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day_75_Jenkins_Slave_Node/images/image-1.png)
 
 ### Install SSH Build Agents Plugin
-![Install SSH Build Agents Plugin](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day75-Jenkins-Slave-Node/images/image-1.png)
+![Install SSH Build Agents Plugin](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day_75_Jenkins_Slave_Node/images/image-2.png)
 
 ## Verify Jenkins Agent Node Connectivity via Test Job
 
@@ -134,4 +134,4 @@ sudo yum install -y java-17-openjdk
 3. Console Output
 
 ### Verify    
-![Verify](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day75-Jenkins-Slave-Node/images/image-3.png)
+![Verify](https://raw.githubusercontent.com/lwinkoko96/100-days-of-devops/main/Jenkins/Day_75_Jenkins_Slave_Node/images/image-3.png)
