@@ -1,0 +1,10 @@
+---
+- name: Copy file to remote host and set permissions
+  hosts: all
+  become: true # Use 'become: yes' or 'become: true' to elevate privileges if needed
+
+  tasks:
+    - name: Copy configuration file
+      ansible.builtin.copy:
+        src: /usr/src/security/index.html
+        dest: /opt/security

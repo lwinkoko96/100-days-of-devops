@@ -1,0 +1,64 @@
+---
+- name: Manage files and ACLs on app servers
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Create /opt/dba directory if not exists
+      file:
+        path: /opt/dba
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create blog.txt on App Server 1
+      file:
+        path: /opt/dba/blog.txt
+        state: touch
+        owner: root
+        group: root
+      when: inventory_hostname == "stapp01"
+
+    - name: Set ACL for group tony (read) on blog.txt
+      acl:
+        path: /opt/dba/blog.txt
+        entity: tony
+        etype: group
+        permissions: r
+        state: present
+      when: inventory_hostname == "stapp01"
+
+    - name: Create story.txt on App Server 2
+      file:
+        path: /opt/dba/story.txt
+        state: touch
+        owner: root
+        group: root
+      when: inventory_hostname == "stapp02"
+
+    - name: Set ACL for user steve (read/write) on story.txt
+      acl:
+        path: /opt/dba/story.txt
+        entity: steve
+        etype: user
+        permissions: rw
+        state: present
+      when: inventory_hostname == "stapp02"
+
+    - name: Create media.txt on App Server 3
+      file:
+        path: /opt/dba/media.txt
+        state: touch
+        owner: root
+        group: root
+      when: inventory_hostname == "stapp03"
+
+    - name: Set ACL for group banner (read/write) on media.txt
+      acl:
+        path: /opt/dba/media.txt
+        entity: banner
+        etype: group
+        permissions: rw
+        state: present
+      when: inventory_hostname == "stapp03"

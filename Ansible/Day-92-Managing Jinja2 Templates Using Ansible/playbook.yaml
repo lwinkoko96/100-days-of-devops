@@ -1,0 +1,6 @@
+---
+- name: Run httpd role on App Server 1
+  hosts: stapp01
+  become: true
+  roles:
+    - role/httpd

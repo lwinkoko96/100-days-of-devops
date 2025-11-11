@@ -1,0 +1,32 @@
+---
+- name: Copy specific files to each App Server
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Copy specific file for host1
+      ansible.builtin.copy:
+        src: /usr/src/devops/blog.txt
+        dest: /opt/devops
+        owner: tony
+        group: tony
+        mode: 0644 
+      when: inventory_hostname == "stapp01"
+
+    - name: Copy specific file for host2
+      ansible.builtin.copy:
+        src: /usr/src/devops/story.txt
+        dest: /opt/devops
+        owner: steve
+        group: steve
+        mode: 0644
+      when: inventory_hostname == "stapp02"
+
+    - name: Copy specific file for host3
+      ansible.builtin.copy:
+        src: /usr/src/devops/media.txt
+        dest: /opt/devops
+        owner: banner
+        group: banner
+        mode: 0644 
+      when: inventory_hostname == "stapp03"

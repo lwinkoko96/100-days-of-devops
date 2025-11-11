@@ -1,0 +1,8 @@
+[app_servers1]
+stapp01 ansible_user=tony ansible_password='Ir0nM@n' ansible_host=172.16.238.10 ansible_connection=ssh ansible_port=22
+
+[app_servers2]
+stapp02 ansible_user=steve ansible_password='Am3ric@' ansible_host=172.16.238.11 ansible_connection=ssh ansible_port=22
+
+[app_servers3]
+stapp03 ansible_user=banner ansible_password='BigGr33n' ansible_host=172.16.238.12 ansible_connection=ssh ansible_port=22
